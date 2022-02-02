@@ -31,7 +31,7 @@ enum CalcButton: String {
     var buttonColor: Color {
         switch self {
         case .add, .subtract, .multiply, .divide, .equal:
-            return .orange
+            return Color.white
         case .clear, .negative, .percent:
             return Color(.lightGray)
         default:
@@ -42,6 +42,10 @@ enum CalcButton: String {
 
 enum Operation {
     case add, subtract, multiply, divide, none
+}
+
+struct CustomColor {
+    static let babyPink = Color("BabyPink")
 }
 
 struct ContentView: View {
@@ -60,7 +64,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+           // Color.black.edgesIgnoringSafeArea(.all)
+            LinearGradient(colors: [Color.pink,CustomColor.babyPink], startPoint: .topLeading, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
@@ -85,7 +91,7 @@ struct ContentView: View {
                                     .font(.system(size: 32))
                                     .frame(width: self.buttonWidth(item: item), height: self.buttonHeight())
                                     .background(item.buttonColor)
-                                    .foregroundColor(Color.white)
+                                    .foregroundColor(Color.black)
                                     .cornerRadius(self.buttonWidth(item: item)/2)
                             })
                         }

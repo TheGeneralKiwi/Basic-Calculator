@@ -33,9 +33,10 @@ enum CalcButton: String {
         case .add, .subtract, .multiply, .divide, .equal:
             return Color.white
         case .clear, .negative, .percent:
-            return Color(.lightGray)
+            return Color(.white)
         default:
-            return Color(UIColor(red: 55/255.0, green: 55/255.0, blue: 55/255.0, alpha: 1))
+            return Color(.black)
+            /*(UIColor(red: 30/230, green: 55/255.0, blue: 55/255.0, alpha: 1))*/
         }
     }
 }
@@ -82,7 +83,7 @@ struct ContentView: View {
                 .padding()
                 //Buttons
                 ForEach(buttons, id: \.self) { row in
-                    HStack(spacing: 12) {
+                    HStack(spacing: 10) {
                         ForEach(row, id: \.self) { item in
                             Button(action: {
                                 self.didTap(button: item)
@@ -91,12 +92,12 @@ struct ContentView: View {
                                     .font(.system(size: 32))
                                     .frame(width: self.buttonWidth(item: item), height: self.buttonHeight())
                                     .background(item.buttonColor)
-                                    .foregroundColor(Color.black)
+                                    .foregroundColor(Color.purple)
                                     .cornerRadius(self.buttonWidth(item: item)/2)
                             })
                         }
                     }
-                    .padding(.bottom, 3)
+                    .padding(.bottom, 20)
                 }
             }
         }

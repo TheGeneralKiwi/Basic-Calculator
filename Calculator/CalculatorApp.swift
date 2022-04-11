@@ -2,7 +2,7 @@
 //  CalculatorApp.swift
 //  Calculator
 //
-//  Created by Jasmine Tetusch on 2/1/22.
+//  Created by Jasmine Teutsch on 2/1/22.
 //
 
 import SwiftUI

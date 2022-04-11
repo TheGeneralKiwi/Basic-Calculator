@@ -81,6 +81,12 @@ struct ContentView: View {
                         .foregroundColor(.white)
                 }
                 .padding()
+                
+                Circle()
+                    .strokeBorder(Color.blue, lineWidth: 5)
+                    .frame(width: 30, height: 30)
+                    .padding()
+                
                 //Buttons
                 ForEach(buttons, id: \.self) { row in
                     HStack(spacing: 10) {
@@ -89,7 +95,7 @@ struct ContentView: View {
                                 self.didTap(button: item)
                             }, label: {
                                 Text(item.rawValue)
-                                    .font(.system(size: 32))
+                                    .font(.title)
                                     .frame(width: self.buttonWidth(item: item), height: self.buttonHeight())
                                     .background(item.buttonColor)
                                     .foregroundColor(Color.purple)
@@ -97,7 +103,7 @@ struct ContentView: View {
                             })
                         }
                     }
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 10) //space between buttons
                 }
             }
         }

@@ -44,6 +44,10 @@ enum Operation {
     case add, subtract, multiply, divide, none
 }
 
+struct CustomColors {
+    static let darkMode = Color("Dmode")
+}
+
 struct ContentView: View {
     
     @State var value = "0"
